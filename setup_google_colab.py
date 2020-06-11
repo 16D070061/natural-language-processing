@@ -5,7 +5,7 @@ import os
 
 def download_github_code(path):
     filename = path.rsplit("/")[-1]
-    os.system("wget https://github.com/16D070061/natural-language-processing/{} -O {}".format(path, filename))
+    os.system("wget https://github.com/16D070061/natural-language-processing/master/ {} -O {}".format(path, filename))
 
 
 def setup_common():
