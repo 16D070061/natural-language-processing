@@ -50,11 +50,19 @@ def load_embeddings(embeddings_path):
     #### YOUR CODE HERE ####
     ########################
 
+    embeddings = {}
+    for line in open(embeddings_path, encoding='utf-8'):
+        word, *vec = line.strip().split('\t')
+        embeddings_dim = len(vec)
+        embeddings[word] = np.array(vec, dtype=np.float32)
+
+    return embeddings, embeddings_dim
+
     # remove this when you're done
-    raise NotImplementedError(
+    """raise NotImplementedError(
         "Open utils.py and fill with your code. In case of Google Colab, download"
         "(https://github.com/hse-aml/natural-language-processing/blob/master/project/utils.py), "
-        "edit locally and upload using '> arrow on the left edge' -> Files -> UPLOAD")
+        "edit locally and upload using '> arrow on the left edge' -> Files -> UPLOAD")"""
 
 
 def question_to_vec(question, embeddings, dim):
